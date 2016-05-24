@@ -13,6 +13,7 @@
 		4A01FEC31CF4072800A27977 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A01FEC11CF4072800A27977 /* Main.storyboard */; };
 		4A01FEC51CF4072800A27977 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A01FEC41CF4072800A27977 /* Assets.xcassets */; };
 		4A01FEC81CF4072800A27977 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A01FEC61CF4072800A27977 /* LaunchScreen.storyboard */; };
+		4A01FED31CF4080000A27977 /* XWLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A01FED21CF4080000A27977 /* XWLocationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		4A01FEC41CF4072800A27977 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A01FEC71CF4072800A27977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A01FEC91CF4072800A27977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A01FED01CF4080000A27977 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		4A01FED11CF4080000A27977 /* XWLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWLocationManager.h; sourceTree = "<group>"; };
+		4A01FED21CF4080000A27977 /* XWLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWLocationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		4A01FEB71CF4072800A27977 /* XWLocationManagerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4A01FECF1CF4080000A27977 /* XWLocationManger */,
 				4A01FEBB1CF4072800A27977 /* AppDelegate.h */,
 				4A01FEBC1CF4072800A27977 /* AppDelegate.m */,
 				4A01FEBE1CF4072800A27977 /* ViewController.h */,
@@ -77,6 +82,16 @@
 				4A01FEB91CF4072800A27977 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4A01FECF1CF4080000A27977 /* XWLocationManger */ = {
+			isa = PBXGroup;
+			children = (
+				4A01FED01CF4080000A27977 /* Singleton.h */,
+				4A01FED11CF4080000A27977 /* XWLocationManager.h */,
+				4A01FED21CF4080000A27977 /* XWLocationManager.m */,
+			);
+			path = XWLocationManger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A01FEC01CF4072800A27977 /* ViewController.m in Sources */,
+				4A01FED31CF4080000A27977 /* XWLocationManager.m in Sources */,
 				4A01FEBD1CF4072800A27977 /* AppDelegate.m in Sources */,
 				4A01FEBA1CF4072800A27977 /* main.m in Sources */,
 			);
