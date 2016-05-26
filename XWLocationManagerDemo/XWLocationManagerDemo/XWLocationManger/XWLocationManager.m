@@ -91,14 +91,14 @@ single_implementation(XWLocationManager)
  *
  *  @param block 定位block代码块
  */
--(void)getCurrentLocationOnly:(ResultLocationBlock)block onViewController:(UIViewController *)viewController{
-    //记录代码块
-    self.locationOnlyBlock = block;
-    //定位更新频率->
-    [self.locationManager setDistanceFilter:100];
-    //判断当前定位权限->进而开始定位
-    [self startLocationOnViewController:viewController];
-}
+//-(void)getCurrentLocationOnly:(ResultLocationBlock)block onViewController:(UIViewController *)viewController{
+//    //记录代码块
+//    self.locationOnlyBlock = block;
+//    //定位更新频率->
+//    [self.locationManager setDistanceFilter:100];
+//    //判断当前定位权限->进而开始定位
+//    [self startLocationOnViewController:viewController];
+//}
 
 //定位
 -(void)startLocationOnViewController:(UIViewController *)viewController{
@@ -153,7 +153,7 @@ single_implementation(XWLocationManager)
         return;
     }else{
         //直接传入坐标
-        self.locationOnlyBlock(location);
+//        self.locationOnlyBlock(location);
         // 在这里, 还没获取地理位置, 获取到地标对象, 所以, 在此处, 要进一步进行反地理编码
         [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
             if (error == nil) {

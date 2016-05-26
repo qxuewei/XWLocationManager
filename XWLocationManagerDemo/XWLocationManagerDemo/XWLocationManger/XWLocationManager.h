@@ -47,6 +47,6 @@ single_interface(XWLocationManager)
  *
  *  @param block 定位block代码块
  */
--(void)getCurrentLocationOnly:(ResultLocationBlock)block onViewController:(UIViewController *)viewController;
+//-(void)getCurrentLocationOnly:(ResultLocationBlock)block onViewController:(UIViewController *)viewController;
 
 @end
