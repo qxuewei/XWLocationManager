@@ -68,6 +68,7 @@ single_implementation(XWLocationManager)
 -(CLGeocoder *)geocoder{
     if (_geocoder == nil) {
         _geocoder = [[CLGeocoder alloc] init];
+        
     }
     return _geocoder;
 }
@@ -153,7 +154,6 @@ single_implementation(XWLocationManager)
         return;
     }else{
         //直接传入坐标
-//        self.locationOnlyBlock(location);
         // 在这里, 还没获取地理位置, 获取到地标对象, 所以, 在此处, 要进一步进行反地理编码
         [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
             if (error == nil) {
