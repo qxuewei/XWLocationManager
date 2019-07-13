@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "XWLocationManager"
-  spec.version      = "0.0.2"
+  spec.version      = "1.0.0"
   spec.summary      = "一行代码实现定位."
 
   # This description is used to generate tags and improve search results.
@@ -91,7 +91,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "XWLocationManager/*"
+  spec.source_files  = "XWLocationManager/*.{h,m}"
 
   # spec.public_header_files = "Classes/**/*.h"
 
