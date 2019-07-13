@@ -1,24 +1,33 @@
 # XWLocationManager
-一行代码获取用户地理位置和逆地理编码后的所在地址,用block方式替代原生代理方法
 
-显示效果 ＜/br＞
+### **一行代码获取当前经纬度和位置信息**
 
-![](https://github.com/qxuewei/XWLocationManager/raw/master/GIF/XWLocationManagerGIF.gif)  
+![显示效果](https://github.com/qxuewei/XWLocationManager/raw/master/GIF/XWLocationManagerGIF.gif)  
 
-使用方法:
-    1.在iOS8.0之后定位, 必须在info.plist, 配置NSLocationWhenInUseUsageDescription 或者 NSLocationAlwaysUsageDescription
-    2.在需要获取用户位置的地方
-    <code><pre>
-            [[XWLocationManager sharedXWLocationManager] getCurrentLocation:^(CLLocation *location, CLPlacemark *placeMark, NSString *error) {
-                if (error) {
-                    NSLog(@"定位出错,错误信息:%@",error);
-                }else{
-                    NSLog(@"定位成功:经度:%f 纬度:%lf 当前地址:%@  \n location详细信息:%@ \n ",location.coordinate.latitude, location.coordinate.longitude, placeMark.name, location);
-                    [self.userLocationInfo setText:[NSString stringWithFormat:@"定位成功:经度:%f 纬度:%lf 当前地址:%@  \n location详细信息:%@ \n ",location.coordinate.latitude, location.coordinate.longitude, placeMark.name, location]];
-                    }
-            } onViewController:self];
-    <code/><pre/>
-    即可获取用户当前位置的经纬度和当前所在地址.
+### 使用方式
+
+##### 1. info.plist 配置 `NSLocationWhenInUseUsageDescription` 、`NSLocationAlwaysUsageDescription` 、 `NSLocationWhenInUseUsageDescription` 三项
+
+eg:
+
+```
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>请打开定位权限以便在发布信息时上传当前位置</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>请打开定位权限以便在发布信息时上传当前位置</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>请打开定位权限以便在发布信息时上传当前位置</string>
+```
+
+##### 2. 在需要获取位置处调用此方法
+
+```
+[XWLocationManager locationCompletionCoordinate:^(double longitude, double latitude, BOOL isRejectLocation) { 
+    
+} addressDetail:^(XWLocationAddressDetail *address) {
+    
+}];
+```
 
 
-[ 我的博客 ]( http://blog.csdn.net/qxuewei )
+#### **[个人技术博客](http://blog.csdn.net/qxuewei)**

@@ -7,29 +7,68 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
-#import "Singleton.h"
-#import <UIKit/UIKit.h>
+
+@interface XWLocationAddressDetail : NSObject
 
 /**
- *  定位block块
- *
- *  @param location  当前位置对象
- *  @param placeMark 反地理编码对象
- *  @param error     错误信息
+ 地址简述 (例如: Apple Inc)
  */
-typedef void(^ResultLocationInfoBlock)(CLLocation *location, CLPlacemark *placeMark, NSString *error);
+@property (nonatomic, copy) NSString *name;
+
+/**
+ 国家
+ */
+@property (nonatomic, copy) NSString *country;
+
+/**
+ 省
+ */
+@property (nonatomic, copy) NSString *administrativeArea;
+
+/**
+ 直辖市/地级市
+ */
+@property (nonatomic, copy) NSString *locality;
+
+/**
+ 县级市/区
+ */
+@property (nonatomic, copy) NSString *subLocality;
+
+/**
+ 街道
+ */
+@property (nonatomic, copy) NSString *thoroughfare;
+
+/**
+ 门牌号
+ */
+@property (nonatomic, copy) NSString *subThoroughfare;
+
+/**
+ 邮政编码
+ */
+@property (nonatomic, copy) NSString *postalCode;
+
+/**
+ 定位失败的描述信息
+ */
+@property (nonatomic, copy) NSString *errorLocalizedDescription;
+
+@end
+
+typedef void(^XWLocationResultInfoCoordinate)(double longitude, double latitude, BOOL isRejectLocation);
+typedef void(^XWLocationResultInfoAddressDetail)(XWLocationAddressDetail *address);
 
 @interface XWLocationManager : NSObject
-//单例对象
-single_interface(XWLocationManager)
-
 
 /**
- *  直接通过代码块获取用户位置信息
- *
- *  @param block 定位block代码块
+ 定位
+
+ @param coordinate 经纬度回调
+ @param addressDetail 编码后地址回调
  */
--(void)getCurrentLocation:(ResultLocationInfoBlock)block onViewController:(UIViewController *)viewController;
++ (void)locationCompletionCoordinate:(XWLocationResultInfoCoordinate)coordinate
+                       addressDetail:(XWLocationResultInfoAddressDetail)addressDetail;
 
 @end
